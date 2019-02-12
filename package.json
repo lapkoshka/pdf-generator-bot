@@ -1,0 +1,12 @@
+{
+  "name": "ksakep-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.12.1",
+    "puppeteer": "^1.11.0",
+    "telegraf": "^3.24.1"
+  }
+}

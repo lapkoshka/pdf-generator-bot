@@ -1,0 +1,8 @@
+.DS_Store
+articles/
+copy.sh
+log.txt
+node_modules/
+package-lock.json
+package.local.json
+users.json
