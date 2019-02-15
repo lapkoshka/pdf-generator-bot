@@ -4,9 +4,12 @@
   "main": "index.js",
   "author": "me",
   "license": "ISC",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
   "dependencies": {
-    "eslint": "^5.12.1",
     "puppeteer": "^1.11.0",
-    "telegraf": "^3.24.1"
+    "telegraf": "^3.24.1",
+    "tslint": "“~”5.12.1"
   }
 }
