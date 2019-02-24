@@ -1,7 +1,7 @@
 import {Browser, Page} from 'puppeteer';
 import * as puppeteer from 'puppeteer';
 import { ContextExtension as Context } from "./context";
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
 
 const PDF_CONFIG = {
   printBackground: true,
@@ -20,6 +20,8 @@ const PASSWORD_SELECTOR = process.env.PASSWORD_SELECTOR || '';
 const PASS = process.env.PASS || '';
 const SUBMIT_SELECTOR = process.env.SUBMIT_SELECTOR || '';
 const OWNER_TG_ACC = process.env.OWNER_TG_ACC || '';
+
+const ARTICLES_FOLDER_NAME = 'articles';
 
 class Printer {
   // @ts-ignore
@@ -40,7 +42,8 @@ class Printer {
     const filename = ctx.getFileName();
 
     return new Promise((onResolve, onReject) => {
-      const filePath = './articles/' + filename;
+
+      const filePath = `./${ARTICLES_FOLDER_NAME}/` + filename;
       if (existsSync(filePath)) {
         ctx.log(`Get ${filename} from cache`);
         ctx.rewritableMessage('Getting from cache...');
@@ -51,6 +54,10 @@ class Printer {
       this.generatePdf(ctx)
         .then((file: Buffer) => {
           ctx.log(`Write ${filename} to cache`);
+          if (!existsSync(`./${ARTICLES_FOLDER_NAME}`)) {
+            mkdirSync(`./${ARTICLES_FOLDER_NAME}`)
+          };
+
           writeFileSync(filePath, file);
           onResolve(file);
         })

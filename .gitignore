@@ -8,3 +8,4 @@ package.local.json
 users.json
 .idea
 build
+start.sh

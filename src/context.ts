@@ -27,11 +27,7 @@ export class ContextExtension {
     }
 
     public async replyOnce(text: string): Promise<tt.Message> {
-        return await this.ctx.reply(text, {
-            reply_markup: {
-                force_reply: true,
-            }
-        });
+        return await this.ctx.reply(text);
     }
 
     public log(text: string): void {
