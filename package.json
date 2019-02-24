@@ -1,15 +1,28 @@
 {
-  "name": "ksakep-bot",
-  "version": "1.0.0",
+  "name": "pdf-generator-bot",
+  "version": "2.0.0",
   "main": "index.js",
-  "author": "me",
+  "author": "Artem Lapko",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lapaboy/pdf-generator-bot"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
+  "keywords": [
+    "generate",
+    "pdf",
+    "bot"
+  ],
   "dependencies": {
-    "puppeteer": "^1.11.0",
-    "telegraf": "^3.24.1",
-    "tslint": "“~”5.12.1"
+    "puppeteer": "1.12.2",
+    "telegraf": "3.27.1",
+    "tslint": "5.12.1"
+  },
+  "devDependencies": {
+    "@types/node": "11.9.4",
+    "@types/puppeteer": "1.12.1"
   }
 }
